@@ -1,3 +1,16 @@
+// VARIABLES & MIXINS:
+
+$first-color: #F5F5F5;
+$second-color: #BCBCBC;
+
+@mixin display-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// GLOBAL :
+
 * {
     margin: 0;
     padding: 0;
@@ -7,26 +20,24 @@
 
 body {
     width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow-x: hidden;
+    @include display-flex;
 }
+
+// CONTAINER :
 
 .container {
     width: 100%;
     max-width: 800px;
     height: fit-content;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include display-flex;
     flex-direction: column;
-    // flex-wrap: wrap;
+
+    // CONTAINER TITLE
 
     &__title {
         font-size: 2.5rem;
-        margin-bottom: 2rem;
+        margin: 2rem;
         font-weight: bold;
         text-transform: uppercase;
     }
@@ -35,19 +46,21 @@ body {
         font-size: 4rem;
     }
 
-    &__card {
-        background: #F5F5F5;
-        padding: 10px;
-        border: 2px solid #BCBCBC;
-        margin-bottom: 1rem;
+    // CONTAINER CARD
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    &__card {
+        background: $first-color;
+        padding: 10px;
+        border: 2px solid $second-color;
+        margin: 1rem;
+        @include display-flex;
         flex-grow: 1;
 
         &__image {
             width: 375px;
+        }
+        &__image--mobile {
+            display: none;
         }
 
         &__text {
@@ -59,8 +72,41 @@ body {
         }
     }
 
+    // CONTAINER CARD REVERSED
+
     &__card--reversed {
         flex-direction: row-reverse;
     }
 
+}
+
+// RESPONSIVE :
+
+@media screen and (max-width: 1024px) {
+    .container__card {
+        flex-direction: column;
+        max-width: 395px;
+    }
+    .container__card__image {
+        width: 100%;
+    }
+    .container__card--reversed {
+        flex-direction: column-reverse;
+    }
+    .container__card__image--desktop {
+        display: none;
+    }
+    .container__card__image--mobile {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 310px) {
+    .container__title {
+        font-size: 1.5rem;
+        margin: 1rem;
+    }
+    .container__title--span {
+        font-size: 3rem;
+    }
 }
