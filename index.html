@@ -1,9 +1,48 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Maquette</title>
+        <link rel="stylesheet" href="styles/styles.css">
     </head>
 
     <body>
-        // TODO: Integrer la maquette
+        <div class="container">
+            <!-- title -->
+            <h1 class="container__title"><span class="container__title--span">M</span>on titre</h1>
+            <!-- card -->
+            <div class="container__card">
+                <div class="carousel">
+                    <img src="img/desktop/1.jpg" alt="photo de présentation" class="container__card__image container__card__image--desktop">
+                    <img src="img/desktop/2.jpg" alt="photo de présentation" class="container__card__image container__card__image--desktop">
+                </div>
+                <div class="carousel__mobile">
+                    <img src="img/mobile/1.jpg" alt="photo de présentation" class="container__card__image container__card__image--mobile first">
+                    <img src="img/mobile/2.jpg" alt="photo de présentation" class="container__card__image container__card__image--mobile second">
+                </div>
+                <div class="container__card__text">
+                    Quam ob rem ut ii qui superiores sunt submittere se debent in amiciatia, sic quodam qui molestas amicitias faciunt, cum ipsi se contemni putant; quod non fere contingit nisi iis qui etiam contemnendos se arbitrantur; qui hac opinione non modo verbis sed etiam opere levandi sunt.
+                </div>
+            </div>
+            <!-- reversed card -->
+            <div class="container__card container__card--reversed">
+                <div class="carousel">
+                    <img src="img/desktop/1.jpg" alt="photo de présentation" class="container__card__image container__card__image--desktop">
+                    <img src="img/desktop/2.jpg" alt="photo de présentation" class="container__card__image container__card__image--desktop hide">
+                </div>
+                <div class="carousel__mobile">
+                    <img src="img/mobile/1.jpg" alt="photo de présentation" class="container__card__image container__card__image--mobile">
+                    <img src="img/mobile/2.jpg" alt="photo de présentation" class="container__card__image container__card__image--mobile hide">
+                </div>
+                <div class="container__card__text">
+                    Quam ob rem ut ii qui superiores sunt submittere se debent in amiciatia, sic quodam qui molestas amicitias faciunt, cum ipsi se contemni putant; quod non fere contingit nisi iis qui etiam contemnendos se arbitrantur; qui hac opinione non modo verbis sed etiam opere levandi sunt.
+                </div>
+            </div>
+        </div>
     </body>
+
+    <script src="./scripts/script.js"></script>
+
 </html>
