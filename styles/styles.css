@@ -115,7 +115,7 @@ body {
     display: flex;
   }
 }
-@media screen and (max-width: 310px) {
+@media screen and (max-width: 340px) {
   .container__title {
     font-size: 1.5rem;
     margin: 1rem;
