@@ -58,16 +58,27 @@ body {
         @include display-flex;
         flex-grow: 1;
 
-        &__image {
+        &__carousel__image {
             width: 375px;
 
             &--mobile {
                 display: none;
-                animation: translate 3s linear infinite;
             }
-            &--desktop {
-                animation: translate 3s linear infinite;
-            }
+        }
+
+        &__carousel {
+            display: flex;
+            min-width: 375px;
+            height: 293px;
+            overflow: hidden;
+        }
+
+        &__carousel__mobile {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: none;
         }
 
         &__text {
@@ -87,31 +98,16 @@ body {
 
 }
 
-.carousel {
-    display: flex;
-    min-width: 375px;
-    height: 293px;
-    overflow: hidden;
-}
-
-.carousel__mobile {
-    display: flex;
-    // min-width: 371px;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: none;
-}
-
 // ANIMATION :
 
-@keyframes translate {
-    0% { transform: translateX(0%); }
-    15% { transform: translateX(0%); }
-    30% { transform: translateX(-100%); }
-    60% { transform: translateX(-100%); }
-    75% { transform: translateX(0%); }
-    100% { transform: translateX(0%); }
+.slideOut {
+    transform: translateX(-100%);
+    transition: all 0.3s linear;
+}
+
+.slideIn {
+    transform: translateX(0%);
+    transition: all 0.3s linear;
 }
 
 // RESPONSIVE :
@@ -121,22 +117,22 @@ body {
         flex-direction: column;
         max-width: 395px;
     }
-    .container__card__image {
+    .container__card__carousel__image {
         width: 100%;
     }
     .container__card--reversed {
         flex-direction: column-reverse;
     }
-    .container__card__image--desktop {
+    .container__card__carousel__image--desktop {
         display: none;
     }
-    .container__card__image--mobile {
+    .container__card__carousel__image--mobile {
         display: block;
     }
-    .carousel {
+    .container__card__carousel {
         display: none;
     }
-    .carousel__mobile {
+    .container__card__carousel__mobile {
         display: flex;
     }
 }
